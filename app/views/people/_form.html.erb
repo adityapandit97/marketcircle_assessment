@@ -1,0 +1,22 @@
+<%= form_with(model: @person, local: true, class:"text-lg inline-block my-3 w-72") do |form| %>
+  <div class="mb-5">
+    <%= form.label :name, "Name" %><br>
+    <%= form.text_field :name, placeholder: "Enter Name", class: "inline-block w-96 px-3 py-2 mt-2 shadow rounded-md border border-gray-200 outline-none" %>
+
+    <%= form.fields_for :details do |detail_form| %>
+      <%= detail_form.label :email %><br>
+      <%= detail_form.email_field :email, placeholder: "Enter Email", class: "inline-block w-96 px-3 py-2 mt-2 shadow rounded-md border border-gray-200 outline-none" %>
+
+      <%= detail_form.label :age %><br>
+      <%= detail_form.number_field :age, placeholder: "Enter Age", class: "inline-block w-96 px-3 py-2 mt-2 shadow rounded-md border border-gray-200 outline-none" %>
+
+      <%= detail_form.label :title %><br>
+      <%= detail_form.text_field :title, placeholder: "Enter Title", class: "inline-block w-96 px-3 py-2 mt-2 shadow rounded-md border border-gray-200 outline-none" %>
+
+      <%= detail_form.label :phone %><br>
+      <%= detail_form.telephone_field :phone, placeholder: "Enter Phone Number", class: "inline-block w-96 px-3 py-2 mt-2 shadow rounded-md border border-gray-200 outline-none" %>
+    <% end %>
+
+    <%= form.submit "Save", class: "btn py-2 ml-2 bg-blue-600 text-white" %>
+  </div>
+<% end %>

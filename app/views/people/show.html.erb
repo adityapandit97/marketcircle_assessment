@@ -1,0 +1,16 @@
+<div>
+  <turbo-frame id="<%= dom_id @person %>">
+    <dl>
+      <dt>Name: <%= @person.name %></dt>
+      <% if @person.detail %>
+        <dt>Email: <%= @person.detail.email %></dt>
+        <dt>Age: <%= @person.detail.age %></dt>
+        <dt>Title: <%= @person.detail.title %></dt>
+        <dt>Phone: <%= @person.detail.phone %></dt>
+      <% end %>
+    </dl> 
+
+    <%= link_to "Back", people_path, class: "btn bg-red-100" %>
+  </turbo-frame>
+</div>
+
